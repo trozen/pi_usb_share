@@ -40,6 +40,10 @@ Install and start services:
 sudo ./install.sh
 ```
 
+# Monitor
+
+`journalctl -u pi_usb_share.modprobe.service -f`
+
 # Uninstall
 
 Services:
