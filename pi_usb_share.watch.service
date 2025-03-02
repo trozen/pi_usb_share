@@ -1,0 +1,9 @@
+[Unit]
+
+[Service]
+Type=simple
+ExecStart=/home/pi/pi_usb_share/share_watch.py --watch /usb_share.img --mount /mnt/usb_share
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

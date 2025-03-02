@@ -1,0 +1,11 @@
+[Unit]
+After=dev-mmcblk0.device
+
+[Service]
+Type=oneshot
+ExecStart=/sbin/modprobe g_mass_storage file=/usb_share.img stall=0 removable=1
+ExecStop=/sbin/modprobe -r g_mass_storage
+RemainAfterExit=true
+
+[Install]
+WantedBy=multi-user.target
