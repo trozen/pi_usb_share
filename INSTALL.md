@@ -1,12 +1,8 @@
-# TODO
-
-
 # Install
 
 ```
 sudo apt install vim python3-watchdog samba
 ```
-
 
 ```
 sudo dd bs=1M if=/dev/zero of=/usb_share.img count=1024
@@ -14,7 +10,7 @@ sudo mkfs.vfat /usb_share.img
 sudo mkdir /mnt/usb_share
 ```
 
-sudo vim /boot/firmware/config.txt
+`sudo vim /boot/firmware/config.txt`
 ```
 [cm5]
 #dtoverlay=dwc2,dr_mode=host
@@ -23,12 +19,12 @@ sudo vim /boot/firmware/config.txt
 dtoverlay=dwc2
 ```
 
-sudo vim /etc/fstab
+`sudo vim /etc/fstab`
 ```
 /usb_share.img /mnt/usb_share vfat loop,ro,sync,flush 0 2
 ```
 
-sudo vim /etc/samba/smb.conf
+`sudo vim /etc/samba/smb.conf`
 ```
 [usb]
 browseable = yes
@@ -36,7 +32,7 @@ path = /mnt/usb_share
 guest ok = yes
 read only = yes
 ```
-sudo systemctl restart smbd.service
+`sudo systemctl restart smbd.service`
 
 Install and start services:
 ```
@@ -61,7 +57,7 @@ sudo modprobe -r g_mass_storage
 
 These commands are not needed, but found in various tutorials. Leaving for future reference.
 
-sudo vim /etc/modules
+`sudo vim /etc/modules`
 ```
 # /etc/modules: kernel modules to load at boot time.
 #
@@ -71,17 +67,17 @@ sudo vim /etc/modules
 dwc2
 ```
 
-sudo vim /boot/firmware/cmdline.txt
+`sudo vim /boot/firmware/cmdline.txt`
 ```
 console=serial0,115200 console=tty1 root=PARTUUID=b7f2ad12-02 rootfstype=ext4 fsck.repair=yes rootwait modules-load=dwc2,g_mass_storage cfg80211.ieee80211_regdom=PL
 ```
 
-sudo vim /etc/modules
+`sudo vim /etc/modules`
 ```
 g_mass_storage file=/usb_share.img stall=0 removable=1
 ```
 
-sudo vim /etc/rc.local
+`sudo vim /etc/rc.local`
 ```
 modprobe g_mass_storage file=/usb_share.img stall=0 removable=1
 ```
