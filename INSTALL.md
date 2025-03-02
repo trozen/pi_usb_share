@@ -42,7 +42,7 @@ sudo ./install.sh
 
 # Monitor
 
-`journalctl -u pi_usb_share.modprobe.service -f`
+`journalctl -u pi_usb_share.watch.service -f`
 
 # Uninstall
 
