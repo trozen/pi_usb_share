@@ -6,7 +6,7 @@ install_service() {
     systemctl daemon-reload
     systemctl enable $name
     systemctl start $name
-    systemctl status $name
+    systemctl status $name --no-pager
 }
 
 install_service pi_usb_share.modprobe.service

@@ -8,6 +8,7 @@ sudo apt install vim python3-watchdog samba
 sudo dd bs=1M if=/dev/zero of=/usb_share.img count=1024
 sudo mkfs.vfat /usb_share.img
 sudo mkdir /mnt/usb_share
+sudo mkdir /srv/usb_share
 ```
 
 `sudo vim /boot/firmware/config.txt`
@@ -28,7 +29,7 @@ dtoverlay=dwc2
 ```
 [usb]
 browseable = yes
-path = /mnt/usb_share
+path = /srv/usb_share
 guest ok = yes
 read only = yes
 ```

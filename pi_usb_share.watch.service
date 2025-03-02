@@ -2,7 +2,7 @@
 
 [Service]
 Type=simple
-ExecStart=/home/pi/pi_usb_share/share_watch.py --watch /usb_share.img --mount /mnt/usb_share
+ExecStart=/home/pi/pi_usb_share/share_watch.py --watch /usb_share.img --mount /mnt/usb_share --sync /srv/usb_share
 Restart=always
 
 [Install]
