@@ -1,7 +1,7 @@
 # Install
 
 ```
-sudo apt install vim python3-watchdog samba
+sudo apt install -y vim python3-watchdog samba
 ```
 
 ```
